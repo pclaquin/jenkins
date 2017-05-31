@@ -13,7 +13,11 @@ stages {
             case "PowerShell":
                 ansiblePlaybook(playbook: "$PIPELINE_HOME/windows/playbookCopyFiles.yml",
                                 inventory: "$PIPELINE_HOME/windows/inventory.txt")
-            break
+        }
+        }
+    }
+}
+  /*          break
             case "Batch":
                 ansiblePlaybook(playbook: "$PIPELINE_HOME/windows/playbookCopyFilesBat.yml",
                                 inventory: "$PIPELINE_HOME/windows/inventory.txt")
@@ -127,3 +131,4 @@ stages {
     }
 }
 }
+*/
