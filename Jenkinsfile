@@ -3,10 +3,9 @@ pipeline {
   stages {
     stage('Input') {
       steps {
-        sh 'truc'
+        echo 'Please input credentials'
       }
     }
-    
     stage('Configuration initiale') {
       steps {
         sh 'bash setup.sh'
