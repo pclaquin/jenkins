@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Configuration initiale') {
       steps {
-        sh '"bash setup.sh"'
+        sh '"setup.sh"'
       }
     }
   }
