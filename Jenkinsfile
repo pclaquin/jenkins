@@ -9,10 +9,10 @@ stages {
         sh "bash $PIPELINE_HOME/windows/inventory.sh $MACHINE $SNAPSHOT $IDENTIFIANT $PASSWORD $SERVEUR"
         ansiblePlaybook(playbook: "$PIPELINE_HOME/windows/playbookCreateInstallDir.yml",
                         inventory: "$PIPELINE_HOME/windows/inventory.txt")
-        switch (LANGAGE) {
-            case "PowerShell":
-                ansiblePlaybook(playbook: "$PIPELINE_HOME/windows/playbookCopyFiles.yml",
-                                inventory: "$PIPELINE_HOME/windows/inventory.txt")
+    //    switch (LANGAGE) {
+      //      case "PowerShell":
+        //        ansiblePlaybook(playbook: "$PIPELINE_HOME/windows/playbookCopyFiles.yml",
+          //                      inventory: "$PIPELINE_HOME/windows/inventory.txt")
         }
         }
     }
