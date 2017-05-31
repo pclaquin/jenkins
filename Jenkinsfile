@@ -1,6 +1,7 @@
 pipeline {
+agent any
     
-node {
+stages {
 
     stage('Configuration initiale') {
         sh "bash $PIPELINE_HOME/windows/setup.sh $IDENTIFIANT $PASSWORD"
