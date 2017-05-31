@@ -1,3 +1,5 @@
+pipeline {
+    
 node {
 
     stage('Configuration initiale') {
@@ -105,4 +107,5 @@ node {
         ansiblePlaybook(playbook: "$PIPELINE_HOME/windows/playbookTakeSnapshot.yml",
                         inventory: "$PIPELINE_HOME/windows/inventory.txt")
     }
+}
 }
