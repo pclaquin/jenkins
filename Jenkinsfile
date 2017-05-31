@@ -55,6 +55,7 @@ stages {
         }
     }
     stage('Désinstallation') {
+        steps {
         switch (LANGAGE) {
             case "PowerShell":
                 ansiblePlaybook(playbook: "$PIPELINE_HOME/windows/playbookUninstall.yml",
@@ -83,6 +84,7 @@ stages {
         steps {
         ansiblePlaybook(playbook: "$PIPELINE_HOME/windows/playbookRevertSnapshot.yml",
                         inventory: "$PIPELINE_HOME/windows/inventory.txt")
+    }
     }
      stage('Install') {
          steps {
@@ -115,6 +117,7 @@ stages {
         steps {
         ansiblePlaybook(playbook: "$PIPELINE_HOME/windows/playbookDeleteSnapshots.yml",
                         inventory: "$PIPELINE_HOME/windows/inventory.txt")
+    }
     }
     stage('Ultime Snapshot') {
         steps {
